@@ -1,13 +1,14 @@
 import gql from 'graphql-tag';
 
 export default gql`
- 
-  type Test {
-      _id: String
-      name: String
-  }
-  
-  type Query {
-      test: [Test]
-  }
+
+    type Query {
+        users(id: Int): [User]
+    }
+    
+    type User {
+        name: String
+        address: String
+        id: Int
+    }
 `

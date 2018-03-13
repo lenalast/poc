@@ -12,7 +12,7 @@ const typeDefs = [
 ]
 
 const resolvers = merge(
-  // Your resolvers
+  // Your resolvers..
   TestResolver
 )
 

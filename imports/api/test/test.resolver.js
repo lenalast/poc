@@ -1,11 +1,13 @@
-import TestData from './test.collection';
-import rp from 'request-promise';
-
+// import TestData from './test.collection';
+import axios from 'axios';
 
 export default {
   Query: {
-    test: (obj, {_id}, context) => {
-      return TestData.find({})
-    }
+      users: () => {
+         return axios.get(
+          'http://localhost:3000/user/'
+        ).then(res => res.data)
+          .catch(err => console.error(err))
+      }
   }
 }
