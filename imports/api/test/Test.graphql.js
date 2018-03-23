@@ -3,12 +3,22 @@ import gql from 'graphql-tag';
 export default gql`
 
     type Query {
-        users(id: Int): [User]
+        artist(id: Int): Artist
+        artists: [Artist]
+        spotifyArtists: [Artist]
+        iTunesArtists: [Artist]
     }
-    
-    type User {
-        name: String
-        address: String
+
+    type Artist {
         id: Int
+        name: String
+        source: String
+        twitterUser: TwitterUser
+    }
+
+    type TwitterUser {
+        id: Int,
+        name: String,
+        twitterHandle: String
     }
 `
