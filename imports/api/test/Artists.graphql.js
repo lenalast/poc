@@ -17,8 +17,8 @@ export default gql`
     }
 
     type TwitterUser {
-        id: Int,
-        name: String,
+        id: Int
+        name: String
         twitterHandle: String
     }
 `

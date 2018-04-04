@@ -2,18 +2,18 @@ import { createApolloServer } from 'meteor/apollo'
 import { makeExecutableSchema } from 'graphql-tools'
 import merge from 'lodash/merge';
 
-import TestSchema from '../../api/test/Test.graphql.js';
-import TestResolver from '../../api/test/test.resolver';
+import ArtistsSchema from '../../api/test/Artists.graphql.js';
+import ArtistsResolver from '../../api/test/Artists.resolver';
 
 
 const typeDefs = [
   // Your gql schemas..
-  TestSchema
+  ArtistsSchema
 ]
 
 const resolvers = merge(
   // Your resolvers..
-  TestResolver
+  ArtistsResolver
 )
 
 const schema = makeExecutableSchema({

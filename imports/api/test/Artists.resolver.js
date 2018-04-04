@@ -58,16 +58,3 @@ export default {
     }
   }
 }
-
-
-// res.data.map(data => {
-//   console.log('console 1', data.artist_name, data.id)
-//   getArtist(data.artist_name, data.id)
-// })
-
-// res => res.data.map(data => {
-//   return {
-//     id: data.id,
-//     name: data.artist_name
-//   }
-// })
