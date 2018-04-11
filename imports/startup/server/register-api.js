@@ -9,12 +9,12 @@ import InstagramSchema from '../../api/Instagram/InstagramUser.graphql.js'
 import InstagramResolver from '../../api/Instagram/InstagramUser.resolver'
 
 const typeDefs = [
-  // Your gql schemas...
+  // Your gql schemas..
   ArtistsSchema
 ]
 
 const resolvers = merge(
-  // Your resolvers...
+  // Your resolvers..
   ArtistsResolver
 )
 
@@ -33,7 +33,6 @@ const linkTypeDefs = `
   extend type Artist {
     instagramUser: User
   }
-  
 `
 
 const schema = mergeSchemas({
@@ -41,7 +40,6 @@ const schema = mergeSchemas({
   resolvers: mergeInfo => ({
     Artist: {
       instagramUser: {
-        // fragment: `fragment UserFragment on User { name }`,
         resolve(parent, args, context, info) {
           const name = parent.name;
           return mergeInfo.delegate(
@@ -59,5 +57,4 @@ const schema = mergeSchemas({
   })
 })
 
-// TODO: Create Apollo server with merged schemas
 createApolloServer({ schema })

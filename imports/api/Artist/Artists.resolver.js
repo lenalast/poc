@@ -39,6 +39,7 @@ export default {
         source: 'Spotify'
       }))
     },
+
     iTunesArtists: async () => {
       const response = await axios.get('http://localhost:3000/itunes')
       return response.data.map(({id, artist_name})=> ({
@@ -51,7 +52,6 @@ export default {
 
   Artist: {
     twitterUser: async (artist) => {
-      console.log(artist);
       const response = await axios.get('http://localhost:3000/twitter?name_like=' + artist.name)
       return response.data[0]
     }

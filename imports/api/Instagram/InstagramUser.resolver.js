@@ -4,7 +4,6 @@ export default {
   Query: {
     user: async (obj, args) => {
       const response = await axios.get('http://localhost:2000/instagram?name_like=' + args.name)
-      console.log(obj, args);
       const { id, name, user_name } = response.data[0]
       return {
         id,
@@ -15,7 +14,6 @@ export default {
 
     users: async () => {
       const response = await axios.get('http://localhost:2000/instagram')
-
       return response.data.map(({id, name, user_name}) => ({
         id,
         name,
