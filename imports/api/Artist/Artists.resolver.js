@@ -1,4 +1,3 @@
-// import TestData from './test.collection';
 import axios from 'axios';
 
 export default {
