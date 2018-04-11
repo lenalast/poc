@@ -1,10 +1,12 @@
 import { createApolloServer } from 'meteor/apollo'
-import { makeExecutableSchema } from 'graphql-tools'
+import { makeExecutableSchema, mergeSchemas } from 'graphql-tools';
 import merge from 'lodash/merge';
 
-import ArtistsSchema from '../../api/test/Artists.graphql.js';
-import ArtistsResolver from '../../api/test/Artists.resolver';
+import ArtistsSchema from '../../api/Artist/Artists.graphql.js';
+import ArtistsResolver from '../../api/Artist/Artists.resolver';
 
+import InstagramSchema from '../../api/Instagram/InstagramUser.graphql.js'
+import InstagramResolver from '../../api/Instagram/InstagramUser.resolver'
 
 const typeDefs = [
   // Your gql schemas..
@@ -16,9 +18,43 @@ const resolvers = merge(
   ArtistsResolver
 )
 
-const schema = makeExecutableSchema({
+const localSchema = makeExecutableSchema({
   typeDefs,
   resolvers
+})
+
+// Schema stitching with Instagram
+const extendedSchema = makeExecutableSchema({
+  typeDefs: InstagramSchema,
+  resolvers: InstagramResolver,
+})
+
+const linkTypeDefs = `
+  extend type Artist {
+    instagramUser: User
+  }
+`
+
+const schema = mergeSchemas({
+  schemas: [localSchema, extendedSchema, linkTypeDefs],
+  resolvers: mergeInfo => ({
+    Artist: {
+      instagramUser: {
+        resolve(parent, args, context, info) {
+          const name = parent.name;
+          return mergeInfo.delegate(
+            'query',
+            'user',
+            {
+              name,
+            },
+            context,
+            info,
+          );
+        },
+      }
+    }
+  })
 })
 
 createApolloServer({ schema })
