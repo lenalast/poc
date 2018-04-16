@@ -1,0 +1,106 @@
+{
+  "artists": [
+    {
+      "id": 11,
+      "artist_name": "Scott Stapp",
+      "age": 44,
+      "gender": "Male"
+    },
+    {
+      "id": 12,
+      "artist_name": "Lady Gaga",
+      "age": 38,
+      "gender": "Female"
+    },
+    {
+      "id": 13,
+      "artist_name": "Sean Banan",
+      "age": 33,
+      "gender": "Male"
+    },
+    {
+      "id": 14,
+      "artist_name": "Darin",
+      "age": 28,
+      "gender": "Male"
+    },
+    {
+      "id": 15,
+      "artist_name": "Corey Taylor",
+      "age": 44,
+      "gender": "Male"
+    }
+  ],
+  "twitter": [
+    {
+      "id": 1,
+      "name": "Scott Stapp",
+      "twitterHandle": "@scottstapp"
+    },
+    {
+      "id": 2,
+      "name": "Lady Gaga",
+      "twitterHandle": "@ladygaga"
+    },
+    {
+      "id": 3,
+      "name": "Beatles",
+      "twitterHandle": "@beatles"
+    },
+    {
+      "id": 4,
+      "name": "One Republic",
+      "twitterHandle": "@onerepublic"
+    },
+    {
+      "id": 4,
+      "name": "Sean Banan",
+      "twitterHandle": "@bananen"
+    },
+    {
+      "id": 5,
+      "name": "Darin",
+      "twitterHandle": "@darin"
+    }
+  ],
+  "spotify": [
+    {
+      "id": 11,
+      "artist_name": "Scott Stapp",
+      "age": 44,
+      "gender": "Male"
+    },
+    {
+      "id": 12,
+      "artist_name": "Lady Gaga",
+      "age": 38,
+      "gender": "Female"
+    },
+    {
+      "id": 13,
+      "artist_name": "Sean Banan",
+      "age": 33,
+      "gender": "Male"
+    },
+    {
+      "id": 14,
+      "artist_name": "Corey Taylor",
+      "age": 44,
+      "gender": "Male"
+    }
+  ],
+  "itunes": [
+    {
+      "id": 13,
+      "artist_name": "Beatles"
+    },
+    {
+      "id": 14,
+      "artist_name": "One Republic"
+    },
+    {
+      "id": 15,
+      "artist_name": "Darin"
+    }
+  ]
+}
